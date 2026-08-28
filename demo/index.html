@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sample Course — Materials</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --fg: #1f2328; --muted: #6b7280; --bg: #fff; --line: #e5e7eb; --accent: #2f6fb5; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #e6e6e6; --muted: #9aa0a6; --bg: #1b1c1f; --line: #33353a; --accent: #6ea8e8; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 15px/1.7 "Segoe UI", "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
+  }
+  .bar { border-bottom: 1px solid var(--line); padding: 14px 0; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  .bar .wrap { display: flex; align-items: center; gap: 12px; }
+  .crest { width: 26px; height: 26px; border-radius: 5px; background: var(--accent); }
+  .site { font-weight: 600; }
+  .note {
+    margin: 20px 0 0; padding: 10px 14px; border-radius: 8px;
+    background: rgba(127,127,127,.10); color: var(--muted); font-size: 13px;
+  }
+  h1 { font-size: 1.5rem; margin: 28px 0 4px; }
+  .sub { color: var(--muted); margin: 0 0 28px; font-size: .92rem; }
+  h2 { font-size: 1rem; margin: 32px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: flex; align-items: baseline; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+  li:last-child { border-bottom: none; }
+  .ico {
+    flex: none; width: 22px; height: 22px; border-radius: 4px; background: #c0392b;
+    color: #fff; font-size: 8px; font-weight: 700; display: grid; place-items: center;
+    transform: translateY(4px);
+  }
+  a { color: var(--accent); text-decoration: none; font-weight: 500; }
+  a:hover { text-decoration: underline; }
+  .meta { color: var(--muted); font-size: .82rem; }
+  footer { margin: 48px 0 60px; color: var(--muted); font-size: .82rem; }
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap"><span class="crest"></span><span class="site">Sample Course Site</span></div></div>
+
+<div class="wrap">
+  <p class="note">
+    This page exists to try out the Bulk PDF Downloader extension. Every file below is a small
+    generated sample PDF — nothing here belongs to any real institution.
+  </p>
+
+  <h1>Introduction to Something — Materials</h1>
+  <p class="sub">Autumn term · 8 files</p>
+
+  <h2>Lecture handouts</h2>
+  <ul>
+    <li><span class="ico">PDF</span><span><a href="week01_handout.pdf">Week 1 — Introduction</a><br><span class="meta">PDF · uploaded 1 Oct</span></span></li>
+    <li><span class="ico">PDF</span><span><a href="week02_handout.pdf">Week 2 — Core Concepts</a><br><span class="meta">PDF · uploaded 8 Oct</span></span></li>
+    <li><span class="ico">PDF</span><span><a href="week03_handout.pdf">Week 3 — Case Studies</a><br><span class="meta">PDF · uploaded 15 Oct</span></span></li>
+    <li><span class="ico">PDF</span><span><a href="week04_handout.pdf">Week 4 — Methods</a><br><span class="meta">PDF · uploaded 22 Oct</span></span></li>
+    <li><span class="ico">PDF</span><span><a href="week05_handout.pdf">Week 5 — Analysis</a><br><span class="meta">PDF · uploaded 29 Oct</span></span></li>
+    <li><span class="ico">PDF</span><span><a href="week06_handout.pdf">Week 6 — Review</a><br><span class="meta">PDF · uploaded 5 Nov</span></span></li>
+  </ul>
+
+  <h2>Reference</h2>
+  <ul>
+    <li><span class="ico">PDF</span><span><a href="syllabus.pdf?v=2">Syllabus (revised)</a><br><span class="meta">PDF · link carries a query string</span></span></li>
+    <li><span class="ico">PDF</span><span><a href="reading_list.pdf">Reading List</a><br><span class="meta">PDF · uploaded 1 Oct</span></span></li>
+  </ul>
+
+  <h2>Other links (not PDFs)</h2>
+  <ul>
+    <li><span><a href="../">Course home</a><br><span class="meta">HTML page — should be ignored</span></span></li>
+    <li><span><a href="../privacy.html">Notices</a><br><span class="meta">HTML page — should be ignored</span></span></li>
+  </ul>
+
+  <footer>Sample Course Site · demo page for Bulk PDF Downloader</footer>
+</div>
+
+</body>
+</html>
