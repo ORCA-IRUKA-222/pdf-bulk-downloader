@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PDF 一括ダウンローダー — ページ内のPDFをまとめて保存するChrome拡張機能</title>
-<meta name="description" content="開いているページのPDFを自動で洗い出し、チェックを付けて一度に保存するChrome拡張機能。埋め込みPDFやリダイレクト付きの配布リンクにも対応します。">
+<title>Bulk PDF Downloader — save every PDF on the page at once</title>
+<meta name="description" content="A Chrome extension that finds every PDF on the page you are viewing and downloads the ones you pick, all at once.">
+<link rel="canonical" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/">
+<link rel="alternate" hreflang="x-default" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/">
+<link rel="alternate" hreflang="en" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/?lang=en">
+<link rel="alternate" hreflang="ja" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/?lang=ja">
+<link rel="alternate" hreflang="es" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/?lang=es">
+<link rel="alternate" hreflang="pt-BR" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/?lang=pt-BR">
+<link rel="alternate" hreflang="de" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/?lang=de">
+<link rel="alternate" hreflang="fr" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/?lang=fr">
+<link rel="alternate" hreflang="ko" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/?lang=ko">
+<link rel="alternate" hreflang="zh-TW" href="https://orca-iruka-222.github.io/pdf-bulk-downloader/?lang=zh-TW">
 <style>
   :root {
     --bg: #ffffff; --fg: #16181d; --muted: #5b6470; --line: #e6e8ec;
@@ -25,7 +35,13 @@
   .wrap { max-width: 900px; margin: 0 auto; padding: 0 20px; }
   a { color: var(--accent); }
 
-  header { padding: 64px 0 40px; text-align: center; }
+  .topbar { display: flex; justify-content: flex-end; padding: 12px 20px 0; }
+  #lang {
+    font: inherit; font-size: 13px; padding: 5px 8px; border-radius: 6px;
+    border: 1px solid var(--line); background: var(--bg); color: var(--fg);
+  }
+
+  header { padding: 40px 0; text-align: center; }
   .logo {
     width: 52px; height: 52px; margin: 0 auto 20px; border-radius: 12px;
     background: var(--accent); display: grid; place-items: center;
@@ -110,115 +126,93 @@
 </head>
 <body>
 
+<div class="topbar">
+  <select id="lang" aria-label="Language"></select>
+</div>
+
 <header class="wrap">
   <div class="logo">PDF</div>
-  <h1>ページ内のPDFを、まとめて保存する</h1>
-  <p class="lead">
-    資料が10個も20個も並んだページで、1つずつクリックして保存していませんか。
-    開いているページのPDFを自動で洗い出し、チェックを付けて一度に保存するChrome拡張機能です。
-  </p>
+  <h1 data-i18n="h1">Save every PDF on the page, at once</h1>
+  <p class="lead" data-i18n="lead"></p>
 
   <div class="cta">
-    <span class="btn btn-soon">Chrome ウェブストアで公開準備中</span>
-    <a class="btn btn-ghost" href="#pricing">価格を見る</a>
+    <span class="btn btn-soon" data-i18n="ctaSoon"></span>
+    <a class="btn btn-ghost" href="#pricing" data-i18n="ctaPricing"></a>
   </div>
-  <p class="cta-note">Chrome・Brave・Edge に対応　/　無料で試せます</p>
+  <p class="cta-note" data-i18n="ctaNote"></p>
 
-  <div class="shot" aria-label="拡張機能の画面">
-    <div class="shot-bar"><b>PDF 一括ダウンロード</b><span class="pill">無料版</span></div>
+  <div class="shot" aria-label="Extension screenshot">
+    <div class="shot-bar"><b>Bulk PDF Download</b><span class="pill" data-i18n="shotPlan"></span></div>
     <div class="shot-body">
-      <div class="shot-status">15 件のPDFを検出（フレーム 1 / リンク 199 件を確認）</div>
-      <div class="shot-item"><span class="mark"></span><span><span class="nm">第1回_講義資料.pdf</span><br><span class="sub">https://example.ac.jp/pluginfile.php/…/第1回_講義資料.pdf</span></span><span class="tag">判定済</span></div>
-      <div class="shot-item"><span class="mark"></span><span><span class="nm">第2回_講義資料.pdf</span><br><span class="sub">https://example.ac.jp/pluginfile.php/…/第2回_講義資料.pdf</span></span><span class="tag">判定済</span></div>
-      <div class="shot-item"><span class="mark"></span><span><span class="nm">参考文献リスト.pdf</span><br><span class="sub">https://example.ac.jp/files/参考文献リスト.pdf</span></span><span class="tag">リンク</span></div>
-      <div class="shot-btn">15 件をダウンロード</div>
+      <div class="shot-status" data-i18n="shotStatus"></div>
+      <div class="shot-item"><span class="mark"></span><span><span class="nm">week01_handout.pdf</span><br><span class="sub" data-i18n="shotLabel"></span></span><span class="tag" data-i18n="shotTag1"></span></div>
+      <div class="shot-item"><span class="mark"></span><span><span class="nm">week02_handout.pdf</span><br><span class="sub" data-i18n="shotLabel"></span></span><span class="tag" data-i18n="shotTag1"></span></div>
+      <div class="shot-item"><span class="mark"></span><span><span class="nm">reading_list.pdf</span><br><span class="sub">https://example.edu/files/reading_list.pdf</span></span><span class="tag" data-i18n="shotTag2"></span></div>
+      <div class="shot-btn" data-i18n="shotBtn"></div>
     </div>
   </div>
 </header>
 
 <section class="wrap">
-  <h2>できること</h2>
-  <p class="sec-lead">「リンクの文字が .pdf で終わっているものだけ」しか拾えない、ありがちな拡張機能とは違います。</p>
+  <h2 data-i18n="f1"></h2>
+  <p class="sec-lead" data-i18n="f1lead"></p>
   <div class="grid">
-    <div class="card">
-      <h3>隠れたPDFも見つける</h3>
-      <p>通常のリンクに加えて、埋め込み表示（embed / object / iframe）、PDF.jsなどのビューアURL、JavaScriptやJSONの中に書かれたURLからも検出します。iframe内のページも同時にスキャンします。</p>
-    </div>
-    <div class="card">
-      <h3>拡張子のないURLに対応</h3>
-      <p>「/download?id=123」のような配信用URLは、実際にPDFかどうかを確認したうえでリダイレクトを追い、本当のファイルの場所を特定します。学習管理システムの資料リンクもこの形式です。</p>
-    </div>
-    <div class="card">
-      <h3>ファイル名が壊れない</h3>
-      <p>サーバーが指定したファイル名を使い、文字化けしやすい日本語名も復元します。Windowsで使えない文字は自動で置き換えるため、保存に失敗しません。連番を付けて並び順を保つこともできます。</p>
-    </div>
-    <div class="card">
-      <h3>閉じても止まらない</h3>
-      <p>ダウンロードはバックグラウンドで進みます。ポップアップを閉じても継続し、再び開けば進捗が見えます。同時ダウンロード数は1〜8本で調整でき、サーバーに負荷をかけません。</p>
-    </div>
+    <div class="card"><h3 data-i18n="c1t"></h3><p data-i18n="c1b"></p></div>
+    <div class="card"><h3 data-i18n="c2t"></h3><p data-i18n="c2b"></p></div>
+    <div class="card"><h3 data-i18n="c3t"></h3><p data-i18n="c3b"></p></div>
+    <div class="card"><h3 data-i18n="c4t"></h3><p data-i18n="c4b"></p></div>
   </div>
 </section>
 
 <section class="wrap" id="pricing">
-  <h2>価格</h2>
-  <p class="sec-lead">まず無料でお試しください。使い続けるなら買い切りです。</p>
+  <h2 data-i18n="pt"></h2>
+  <p class="sec-lead" data-i18n="plead"></p>
   <div class="plans">
     <div class="plan">
-      <h3>無料</h3>
+      <h3 data-i18n="freeName"></h3>
       <div class="price">¥0</div>
       <ul>
-        <li>ページ内のPDFの検出</li>
-        <li>1日5件までのダウンロード</li>
-        <li>拡張子のないリンクの判定（上位5件まで）</li>
+        <li data-i18n="fi1"></li>
+        <li data-i18n="fi2"></li>
+        <li data-i18n="fi3"></li>
       </ul>
-      <span class="btn btn-soon">公開準備中</span>
+      <span class="btn btn-soon" data-i18n="ctaSoon"></span>
     </div>
     <div class="plan featured">
-      <h3>有料版</h3>
-      <div class="price">¥500<small>買い切り</small></div>
+      <h3 data-i18n="proName"></h3>
+      <div class="price">¥500<small data-i18n="priceNote"></small></div>
       <ul>
-        <li>ダウンロード件数は無制限</li>
-        <li>判定件数も無制限</li>
-        <li>同一サイトのリンク先ページも探索</li>
-        <li>連番の付与、保存先サブフォルダの指定</li>
-        <li>1つのライセンスで3台まで</li>
+        <li data-i18n="pi1"></li>
+        <li data-i18n="pi2"></li>
+        <li data-i18n="pi3"></li>
+        <li data-i18n="pi4"></li>
+        <li data-i18n="pi5"></li>
       </ul>
-      <span class="btn btn-soon">まもなく販売開始</span>
+      <span class="btn btn-soon" data-i18n="buySoon"></span>
     </div>
   </div>
 </section>
 
 <section class="wrap">
-  <h2>よくある質問</h2>
+  <h2 data-i18n="faqt"></h2>
   <dl>
-    <dt>閲覧履歴やページの内容が送信されることはありますか？</dt>
-    <dd>ありません。検出も保存もすべてブラウザ内で完結します。解析ツールも広告も使用していません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</dd>
-
-    <dt>インストール時に「すべてのサイトのデータを読み取る」権限を求められますか？</dt>
-    <dd>求めません。アイコンをクリックしたときだけ、そのページを解析します。「リンク先ページも探索」機能を使うときにだけ、そのサイト1つ分の許可を求めます。</dd>
-
-    <dt>ログインが必要なサイトのPDFも取得できますか？</dt>
-    <dd>できます。ブラウザのログイン状態をそのまま使うため、通常どおりクリックして保存する場合と同じものが取得できます。</dd>
-
-    <dt>取得できないPDFはありますか？</dt>
-    <dd>ページ上でJavaScriptが動的に生成するPDF（blob: 形式）や、POST送信でしか取得できないものは対象外です。</dd>
-
-    <dt>購入後、別のPCでも使えますか？</dt>
-    <dd>使えます。1つのライセンスキーで3台まで有効化できます。</dd>
-
-    <dt>Braveでも使えますか？</dt>
-    <dd>使えます。Chrome ウェブストアから追加できるブラウザ（Brave、Edge、Vivaldi など）に対応しています。</dd>
+    <dt data-i18n="q1"></dt><dd data-i18n="a1"></dd>
+    <dt data-i18n="q2"></dt><dd data-i18n="a2"></dd>
+    <dt data-i18n="q3"></dt><dd data-i18n="a3"></dd>
+    <dt data-i18n="q4"></dt><dd data-i18n="a4"></dd>
+    <dt data-i18n="q5"></dt><dd data-i18n="a5"></dd>
+    <dt data-i18n="q6"></dt><dd data-i18n="a6"></dd>
   </dl>
 </section>
 
 <footer>
   <div class="wrap">
-    <a href="privacy.html">プライバシーポリシー</a>
-    <a href="https://github.com/ORCA-IRUKA-222/pdf-bulk-downloader/issues">お問い合わせ</a>
-    <p>ご利用にあたっては、各サイトの利用規約と著作権を尊重してください。<br>
-    © 2026 ORCA</p>
+    <a href="privacy.html" data-i18n="privacy"></a>
+    <a href="https://github.com/ORCA-IRUKA-222/pdf-bulk-downloader/issues" data-i18n="contact"></a>
+    <p><span data-i18n="footNote"></span><br>© 2026 ORCA</p>
   </div>
 </footer>
 
+<script src="i18n.js"></script>
 </body>
 </html>

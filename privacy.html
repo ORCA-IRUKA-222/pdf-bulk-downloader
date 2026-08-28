@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>プライバシーポリシー — PDF 一括ダウンローダー</title>
+<title>Privacy Policy — Bulk PDF Downloader</title>
+<link rel="alternate" hreflang="ja" href="privacy.ja.html">
 <style>
   :root { color-scheme: light dark; --fg: #1f2328; --muted: #5b6470; --bg: #ffffff; --line: #e5e7eb; }
   @media (prefers-color-scheme: dark) {
@@ -28,60 +29,60 @@
 </head>
 <body>
 
-<h1>プライバシーポリシー</h1>
-<p class="updated">PDF 一括ダウンローダー（Chrome 拡張機能）／最終更新日: 2026年8月28日</p>
+<h1>Privacy Policy</h1>
+<p class="updated">Bulk PDF Downloader (Chrome extension) / Last updated: 28 August 2026</p>
 
-<h2>1. 収集する情報</h2>
-<p>本拡張機能は、利用者の個人情報および閲覧に関する情報を<strong>一切収集しません</strong>。具体的には、以下のいずれも収集・記録・送信しません。</p>
+<h2>1. Information we collect</h2>
+<p>This extension collects <strong>no personal information and no browsing information</strong> whatsoever. Specifically, none of the following is collected, recorded or transmitted:</p>
 <ul>
-  <li>閲覧したページのURLや閲覧履歴</li>
-  <li>ページの内容やそこに含まれるテキスト</li>
-  <li>氏名・メールアドレス・IPアドレスなどの個人情報</li>
-  <li>位置情報</li>
-  <li>操作ログ、利用状況の統計</li>
+  <li>URLs of pages you visit, or your browsing history</li>
+  <li>Page content or any text it contains</li>
+  <li>Your name, email address, IP address or any other personal data</li>
+  <li>Location data</li>
+  <li>Usage logs or analytics of any kind</li>
 </ul>
-<p>解析ツール（アクセス解析・クラッシュレポート等）および広告は使用していません。</p>
+<p>No analytics services (traffic analysis, crash reporting) and no advertising are used.</p>
 
-<h2>2. 端末内に保存される情報</h2>
-<p>以下の情報を、ブラウザの拡張機能用ストレージ（<code>chrome.storage.local</code>）に<strong>利用者の端末内にのみ</strong>保存します。外部のサーバーへ送信されることはありません。</p>
+<h2>2. Information stored on your device</h2>
+<p>The following is stored <strong>only on your own device</strong>, in the extension's storage area (<code>chrome.storage.local</code>). It is never sent to any server:</p>
 <ul>
-  <li>拡張機能の設定（保存先サブフォルダ、同時ダウンロード数、ファイル名の付け方など）</li>
-  <li>有料版のライセンスキーおよびその検証状態</li>
+  <li>Your settings (destination subfolder, number of parallel downloads, how filenames are built, and so on)</li>
+  <li>Your paid licence key and its validation state</li>
 </ul>
-<p>これらは拡張機能をアンインストールすると削除されます。</p>
+<p>All of it is removed when you uninstall the extension.</p>
 
-<h2>3. 外部への送信</h2>
-<p>外部へ通信を行うのは、次の2つの場合に限られます。</p>
-<p><strong>(1) ライセンスの検証</strong><br>
-有料版のライセンスキーを入力した場合に限り、その検証のため、キーを決済事業者である Lemon Squeezy のライセンス検証APIへ送信します。送信するのは利用者が入力したライセンスキーのみで、閲覧情報は含みません。無料版のままご利用の場合、この通信は発生しません。</p>
-<p><strong>(2) PDFファイルの取得</strong><br>
-利用者が選択したPDFファイルを保存する際、および利用者が「リンク先ページも探索」「Content-Typeで判定」を有効にした際に、<strong>利用者が閲覧しているサイトに対してのみ</strong>通信を行います。これは通常のブラウザによるダウンロードと同じ通信であり、取得した内容は利用者の端末に保存されるだけで、開発者を含む第三者に送信されることはありません。</p>
+<h2>3. Outbound communication</h2>
+<p>The extension communicates with the outside world in exactly two situations.</p>
+<p><strong>(1) Licence validation</strong><br>
+Only if you enter a paid licence key, that key is sent to the licence API of Lemon Squeezy, the payment provider, in order to verify it. Only the key you typed is transmitted; no browsing information is included. If you stay on the free version, this request never happens.</p>
+<p><strong>(2) Fetching PDF files</strong><br>
+When you save the PDFs you selected — and when you enable "crawl linked pages" or "verify by Content-Type" — the extension makes requests <strong>only to the site you are currently viewing</strong>. This is the same kind of request your browser makes for an ordinary download. What is fetched is saved to your device and is never sent to anyone, including the developer.</p>
 
-<h2>4. 権限の利用目的</h2>
+<h2>4. Why each permission is needed</h2>
 <table>
-  <tr><th>権限</th><th>目的</th></tr>
-  <tr><td><code>activeTab</code></td><td>アイコンをクリックした時に限り、表示中のページからPDFリンクを検出するため</td></tr>
-  <tr><td><code>scripting</code></td><td>表示中のページに検出スクリプトを注入するため</td></tr>
-  <tr><td><code>downloads</code></td><td>選択されたPDFを保存するため</td></tr>
-  <tr><td><code>storage</code></td><td>設定とライセンス情報を端末内に保存するため</td></tr>
-  <tr><td><code>api.lemonsqueezy.com</code></td><td>ライセンスキーの検証のため</td></tr>
-  <tr><td>任意のサイトへのアクセス</td><td>「リンク先ページも探索」機能を使う場合に、利用者が許可したサイトのページを取得するため。インストール時には要求せず、機能を使う操作をした時にのみ、そのサイトに限って許可を求めます</td></tr>
+  <tr><th>Permission</th><th>Purpose</th></tr>
+  <tr><td><code>activeTab</code></td><td>To find PDF links on the current page, only when you click the toolbar icon</td></tr>
+  <tr><td><code>scripting</code></td><td>To inject the detection script into the page you are viewing</td></tr>
+  <tr><td><code>downloads</code></td><td>To save the PDFs you selected</td></tr>
+  <tr><td><code>storage</code></td><td>To keep your settings and licence state on your device</td></tr>
+  <tr><td><code>api.lemonsqueezy.com</code></td><td>To validate a paid licence key</td></tr>
+  <tr><td>Access to websites (optional)</td><td>To fetch pages when you use "crawl linked pages". This is not requested at install time; it is requested for a single site only, at the moment you use that feature</td></tr>
 </table>
 
-<h2>5. 第三者への提供</h2>
-<p>利用者のデータを第三者に販売、譲渡、共有することはありません。</p>
+<h2>5. Sharing with third parties</h2>
+<p>We do not sell, transfer or share user data with third parties.</p>
 
-<h2>6. 児童のプライバシー</h2>
-<p>本拡張機能は児童を対象としたものではなく、児童から意図的に情報を収集することはありません。</p>
+<h2>6. Children's privacy</h2>
+<p>This extension is not directed at children, and we do not knowingly collect information from them.</p>
 
-<h2>7. 本ポリシーの変更</h2>
-<p>本ポリシーを変更する場合は、本ページの内容を更新し、最終更新日を改めます。重要な変更がある場合は、拡張機能の更新情報でお知らせします。</p>
+<h2>7. Changes to this policy</h2>
+<p>If this policy changes, we will update this page and revise the date above. Significant changes will also be noted in the extension's update information.</p>
 
-<h2>8. お問い合わせ</h2>
-<p>本ポリシーまたは本拡張機能に関するお問い合わせは、以下までご連絡ください。</p>
+<h2>8. Contact</h2>
+<p>For questions about this policy or the extension, please get in touch:</p>
 <p>ORCA<br><a href="https://github.com/ORCA-IRUKA-222/pdf-bulk-downloader/issues">GitHub Issues</a></p>
 
-<footer><a href="./">← PDF 一括ダウンローダー</a></footer>
+<footer><a href="./">← Bulk PDF Downloader</a>　<a href="privacy.ja.html">日本語</a></footer>
 
 </body>
 </html>
