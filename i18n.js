@@ -68,7 +68,20 @@ const T = {
     a6: 'Yes. It works in any browser that installs from the Chrome Web Store, including Brave, Edge and Vivaldi.',
     privacy: 'Privacy policy',
     contact: 'Contact',
-    footNote: 'Please respect the terms of service and copyright of every site you use it on.'
+    footNote: 'Please respect the terms of service and copyright of every site you use it on.',
+    actTitle: "Activating your licence",
+    actWorking: "Activating…",
+    actDone: "Done. All paid features are unlocked.",
+    actDoneSub: "You can close this tab and go back to your PDFs.",
+    actFail: "Automatic activation did not go through.",
+    actFailSub: "Copy the key below and paste it into the extension: Options -> Licence.",
+    actNoExt: "The extension is not installed in this browser yet.",
+    actNoExtSub: "Install it first and reopen this page, or copy the key below and paste it into the extension.",
+    actKey: "Your licence key",
+    actCopy: "Copy",
+    actCopied: "Copied",
+    actInstall: "Install the extension",
+    actKeep: "Keep this key. It also arrives by email from Lemon Squeezy."
   },
 
   ja: {
@@ -124,7 +137,20 @@ const T = {
     a6: '使えます。Chrome ウェブストアから追加できるブラウザ（Brave、Edge、Vivaldi など）に対応しています。',
     privacy: 'プライバシーポリシー',
     contact: 'お問い合わせ',
-    footNote: 'ご利用にあたっては、各サイトの利用規約と著作権を尊重してください。'
+    footNote: 'ご利用にあたっては、各サイトの利用規約と著作権を尊重してください。',
+    actTitle: "ライセンスを有効化しています",
+    actWorking: "有効化中…",
+    actDone: "有効化しました。すべての機能が使えます。",
+    actDoneSub: "このタブは閉じて構いません。そのまま作業に戻れます。",
+    actFail: "自動で有効化できませんでした。",
+    actFailSub: "下のキーをコピーして、拡張機能の「オプション → ライセンス」に貼り付けてください。",
+    actNoExt: "このブラウザにはまだ拡張機能が入っていません。",
+    actNoExtSub: "先にインストールしてから、このページを開き直してください。下のキーを直接貼り付けても有効化できます。",
+    actKey: "あなたのライセンスキー",
+    actCopy: "コピー",
+    actCopied: "コピーしました",
+    actInstall: "拡張機能をインストール",
+    actKeep: "このキーは控えておいてください。Lemon Squeezy からメールでも届きます。"
   },
 
   es: {
@@ -180,7 +206,20 @@ const T = {
     a6: 'Sí. Funciona en cualquier navegador que instale desde Chrome Web Store, como Brave, Edge o Vivaldi.',
     privacy: 'Política de privacidad',
     contact: 'Contacto',
-    footNote: 'Respeta siempre las condiciones de uso y los derechos de autor de cada sitio.'
+    footNote: 'Respeta siempre las condiciones de uso y los derechos de autor de cada sitio.',
+    actTitle: "Activando tu licencia",
+    actWorking: "Activando…",
+    actDone: "Listo. Todas las funciones de pago están disponibles.",
+    actDoneSub: "Puedes cerrar esta pestaña y volver a tus PDF.",
+    actFail: "La activación automática no se completó.",
+    actFailSub: "Copia la clave de abajo y pégala en la extensión: Opciones -> Licencia.",
+    actNoExt: "La extensión aún no está instalada en este navegador.",
+    actNoExtSub: "Instálala y vuelve a abrir esta página, o copia la clave de abajo y pégala en la extensión.",
+    actKey: "Tu clave de licencia",
+    actCopy: "Copiar",
+    actCopied: "Copiada",
+    actInstall: "Instalar la extensión",
+    actKeep: "Guarda esta clave. También te llega por correo desde Lemon Squeezy."
   },
 
   'pt-BR': {
@@ -236,7 +275,20 @@ const T = {
     a6: 'Funciona. Vale para qualquer navegador que instale pela Chrome Web Store, como Brave, Edge e Vivaldi.',
     privacy: 'Política de privacidade',
     contact: 'Contato',
-    footNote: 'Respeite os termos de uso e os direitos autorais de cada site.'
+    footNote: 'Respeite os termos de uso e os direitos autorais de cada site.',
+    actTitle: "Ativando sua licença",
+    actWorking: "Ativando…",
+    actDone: "Pronto. Todos os recursos pagos estão liberados.",
+    actDoneSub: "Você pode fechar esta aba e voltar aos seus PDFs.",
+    actFail: "A ativação automática não foi concluída.",
+    actFailSub: "Copie a chave abaixo e cole na extensão: Opções -> Licença.",
+    actNoExt: "A extensão ainda não está instalada neste navegador.",
+    actNoExtSub: "Instale primeiro e reabra esta página, ou copie a chave abaixo e cole na extensão.",
+    actKey: "Sua chave de licença",
+    actCopy: "Copiar",
+    actCopied: "Copiada",
+    actInstall: "Instalar a extensão",
+    actKeep: "Guarde esta chave. Ela também chega por e-mail da Lemon Squeezy."
   },
 
   de: {
@@ -292,7 +344,20 @@ const T = {
     a6: 'Ja. Sie läuft in jedem Browser, der aus dem Chrome Web Store installiert, also auch Brave, Edge und Vivaldi.',
     privacy: 'Datenschutzerklärung',
     contact: 'Kontakt',
-    footNote: 'Bitte beachten Sie die Nutzungsbedingungen und das Urheberrecht der jeweiligen Website.'
+    footNote: 'Bitte beachten Sie die Nutzungsbedingungen und das Urheberrecht der jeweiligen Website.',
+    actTitle: "Lizenz wird aktiviert",
+    actWorking: "Wird aktiviert…",
+    actDone: "Fertig. Alle kostenpflichtigen Funktionen sind freigeschaltet.",
+    actDoneSub: "Sie können diesen Tab schließen und weiterarbeiten.",
+    actFail: "Die automatische Aktivierung hat nicht geklappt.",
+    actFailSub: "Kopieren Sie den Schlüssel unten und fügen Sie ihn in der Erweiterung ein: Optionen -> Lizenz.",
+    actNoExt: "Die Erweiterung ist in diesem Browser noch nicht installiert.",
+    actNoExtSub: "Installieren Sie sie und öffnen Sie diese Seite erneut, oder fügen Sie den Schlüssel unten direkt ein.",
+    actKey: "Ihr Lizenzschlüssel",
+    actCopy: "Kopieren",
+    actCopied: "Kopiert",
+    actInstall: "Erweiterung installieren",
+    actKeep: "Bewahren Sie den Schlüssel auf. Er kommt auch per E-Mail von Lemon Squeezy."
   },
 
   fr: {
@@ -348,7 +413,20 @@ const T = {
     a6: 'Oui, comme dans tout navigateur qui installe depuis le Chrome Web Store : Brave, Edge, Vivaldi…',
     privacy: 'Politique de confidentialité',
     contact: 'Contact',
-    footNote: 'Respectez les conditions d’utilisation et le droit d’auteur de chaque site.'
+    footNote: 'Respectez les conditions d’utilisation et le droit d’auteur de chaque site.',
+    actTitle: "Activation de votre licence",
+    actWorking: "Activation…",
+    actDone: "Terminé. Toutes les fonctions payantes sont débloquées.",
+    actDoneSub: "Vous pouvez fermer cet onglet et reprendre votre travail.",
+    actFail: "L'activation automatique n'a pas abouti.",
+    actFailSub: "Copiez la clé ci-dessous et collez-la dans l'extension : Options -> Licence.",
+    actNoExt: "L'extension n'est pas encore installée dans ce navigateur.",
+    actNoExtSub: "Installez-la puis rouvrez cette page, ou collez la clé ci-dessous dans l'extension.",
+    actKey: "Votre clé de licence",
+    actCopy: "Copier",
+    actCopied: "Copiée",
+    actInstall: "Installer l'extension",
+    actKeep: "Conservez cette clé. Elle vous est aussi envoyée par e-mail par Lemon Squeezy."
   },
 
   ko: {
@@ -404,7 +482,20 @@ const T = {
     a6: '됩니다. Chrome 웹 스토어에서 설치할 수 있는 브라우저(Brave, Edge, Vivaldi 등)를 지원합니다.',
     privacy: '개인정보 처리방침',
     contact: '문의',
-    footNote: '이용하실 때는 각 사이트의 이용약관과 저작권을 존중해 주세요.'
+    footNote: '이용하실 때는 각 사이트의 이용약관과 저작권을 존중해 주세요.',
+    actTitle: "라이선스를 인증하는 중",
+    actWorking: "인증 중…",
+    actDone: "인증되었습니다. 모든 유료 기능을 사용할 수 있습니다.",
+    actDoneSub: "이 탭은 닫으셔도 됩니다.",
+    actFail: "자동 인증이 완료되지 않았습니다.",
+    actFailSub: "아래 키를 복사해 확장 프로그램의 「옵션 → 라이선스」에 붙여넣으세요.",
+    actNoExt: "이 브라우저에는 아직 확장 프로그램이 설치되어 있지 않습니다.",
+    actNoExtSub: "먼저 설치한 뒤 이 페이지를 다시 열거나, 아래 키를 직접 붙여넣으세요.",
+    actKey: "라이선스 키",
+    actCopy: "복사",
+    actCopied: "복사됨",
+    actInstall: "확장 프로그램 설치",
+    actKeep: "이 키를 보관해 두세요. Lemon Squeezy에서 메일로도 발송됩니다."
   },
 
   'zh-TW': {
@@ -460,7 +551,20 @@ const T = {
     a6: '可以。凡是能從 Chrome 線上應用程式商店安裝的瀏覽器（Brave、Edge、Vivaldi 等）都支援。',
     privacy: '隱私權政策',
     contact: '聯絡我們',
-    footNote: '使用時請尊重各網站的使用條款與著作權。'
+    footNote: '使用時請尊重各網站的使用條款與著作權。',
+    actTitle: "正在啟用授權",
+    actWorking: "啟用中…",
+    actDone: "已啟用，所有付費功能都能使用了。",
+    actDoneSub: "可以關閉這個分頁，回去繼續作業。",
+    actFail: "自動啟用沒有完成。",
+    actFailSub: "請複製下方的授權碼，貼到擴充功能的「選項 → 授權」。",
+    actNoExt: "這個瀏覽器還沒有安裝擴充功能。",
+    actNoExtSub: "請先安裝後重新開啟本頁，或直接複製下方授權碼貼上。",
+    actKey: "你的授權碼",
+    actCopy: "複製",
+    actCopied: "已複製",
+    actInstall: "安裝擴充功能",
+    actKeep: "請保留這組授權碼。Lemon Squeezy 也會寄送到你的信箱。"
   }
 };
 
@@ -492,8 +596,10 @@ function applyLang(lang) {
     const v = get(el.dataset.i18n);
     if (v) el.textContent = v;
   }
-  const titleText = get('title');
-  if (titleText) document.title = titleText;
+  if (!document.documentElement.hasAttribute('data-no-auto-title')) {
+    const titleText = get('title');
+    if (titleText) document.title = titleText;
+  }
   const meta = document.querySelector('meta[name="description"]');
   if (meta) meta.content = get('metaDesc');
 
