@@ -30,7 +30,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Bulk PDF Downloader (Chrome extension) / Last updated: 28 August 2026</p>
+<p class="updated">Bulk PDF Downloader (Chrome extension) / Last updated: 11 September 2026</p>
 
 <h2>1. Information we collect</h2>
 <p>This extension collects <strong>no personal information and no browsing information</strong> whatsoever. Specifically, none of the following is collected, recorded or transmitted:</p>
@@ -50,6 +50,7 @@
   <li>Your paid licence key and its validation state</li>
 </ul>
 <p>All of it is removed when you uninstall the extension.</p>
+<p>In addition, to mark PDFs you have saved before as "Saved", the extension compares the PDF URLs found on the page with your browser's own download history. This comparison happens on your device; the history is not copied into the extension's storage and is never transmitted.</p>
 
 <h2>3. Outbound communication</h2>
 <p>The extension communicates with the outside world in exactly two situations.</p>
@@ -63,7 +64,7 @@ When you save the PDFs you selected — and when you enable "crawl linked pages"
   <tr><th>Permission</th><th>Purpose</th></tr>
   <tr><td><code>activeTab</code></td><td>To find PDF links on the current page, only when you click the toolbar icon</td></tr>
   <tr><td><code>scripting</code></td><td>To inject the detection script into the page you are viewing</td></tr>
-  <tr><td><code>downloads</code></td><td>To save the PDFs you selected</td></tr>
+  <tr><td><code>downloads</code></td><td>To save the PDFs you selected, and to check your download history on your device for PDFs you already saved</td></tr>
   <tr><td><code>storage</code></td><td>To keep your settings and licence state on your device</td></tr>
   <tr><td><code>api.lemonsqueezy.com</code></td><td>To validate a paid licence key</td></tr>
   <tr><td>Access to websites (optional)</td><td>To fetch pages when you use "crawl linked pages". This is not requested at install time; it is requested for a single site only, at the moment you use that feature</td></tr>
